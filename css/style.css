@@ -12,7 +12,23 @@
   background-color: #d44638;
   color: white;
   padding: 20px 20px 20px 40px;
-  font-size: 15px;
+  font-size: 20px;
+}
+
+#logo {
+  text-shadow: 5px 5px 5px #701616;
+}
+
+#log-out {
+  margin-top: -70px;
+  float:right;
+  font-size: 10px;
+  border: 2px solid white;
+  padding: 10px;
+  border-radius: 50px;
+  background-color: white;
+  color: #d44638;
+  box-shadow: 2px 2px #c6c6c6;
 }
 
 #search {
@@ -79,4 +95,21 @@ body {
 
 .clear {
   clear: both;
+}
+
+.subject {
+  font-size: 13px;
+  list-style-type: none;
+  padding: 17px 10px 10px 50px;
+  border-bottom: 1px dotted #818181;
+  background-image: url("/assets/plus.png");
+  background-position: 7px;
+  background-size: 5%; 
+  background-repeat: no-repeat;
+}
+
+.message, .sender, .date {
+  /* border-top: 1px solid #9c9c9c; */
+  padding: 10px;
+  display: none;
 }
