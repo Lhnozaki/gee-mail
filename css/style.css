@@ -1,9 +1,31 @@
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 800px;
+  margin: 30px auto;
+}
+
 .header {
-  margin: -10px 100px 0px 100px;
+  margin-top: -30px;
   background-color: #d44638;
   color: white;
-  padding: 20px;
+  padding: 20px 20px 20px 40px;
   font-size: 15px;
+}
+
+#search {
+  float: right;
+  width: 80%;
+  background-color: rgb(247, 243, 243);
+  background-image: url("/assets/search.png");
+  background-position: 7px;
+  background-size: 5%; 
+  background-repeat: no-repeat;
+  padding-left: 50px;
+  height: 40px;
+  border-right: 1px solid #c6c6c6;
 }
 
 body {
@@ -12,37 +34,49 @@ body {
 }
 
 .menu {
-  height: 70%;
-  width: 160px;
-  position: relative;
-  z-index: 1;
-  top: 0;
-  left: 0;
+  height: 500px;
+  float: left;
+  width: 20%;
   background-color: #fff;
-  overflow-x: hidden;
+  overflow-x: auto;
   padding-top: 0px;
-  border: 1px solid #c6c6c6;
-  margin-left: 100px;
+  border-right: 1px solid #c6c6c6;
 }
 
 .menu a {
   padding: 20px 8px 20px 30px;
   text-decoration: none;
-  font-size: 20px;
+  font-size: 15px;
   color: #818181;
   display: block;
 }
 
 .menu a:hover {
-  background-color: #e2e2e2;
+  background-color: #e49e9e;
   color: #ffffff;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
 }
 
-
-.main-body {
-
+.emails {
+  float: right;
+  width: 80%;
+  height: 460px;
+  overflow: auto;
+  background-color: #fff;
+  padding-top: 0px;
+  border-left: 1px solid #c6c6c6;
 }
 
-.main-body a {
+#compose:hover {
+  background-color: cornflowerblue;
+}
 
+#plus {
+  color: turquoise;
+  font-size: 20px;
+}
+
+.clear {
+  clear: both;
 }
