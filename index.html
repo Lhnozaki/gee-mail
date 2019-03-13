@@ -94,26 +94,54 @@
 					// Set ID & Append Child
 					UIsubject.className = "subject";
 					UIsubject.textContent = geemails[i].subject;
+					emailContainer.appendChild(UIsubject);
+					UIsubject.style.display = "block";
+
 					UIdate.className = "date";
 					UIdate.textContent = geemails[i].date;
 					UIsubject.appendChild(UIdate);
+					UIdate.style.display = "none";
+
 					UIsender.className = "sender";
 					UIsender.textContent = geemails[i].sender;
 					UIsubject.appendChild(UIsender);
+					UIsender.style.display = "none";
+
 					UIbody.className = "message";
 					UIbody.textContent = geemails[i].body;
 					UIsubject.appendChild(UIbody);
-					emailContainer.appendChild(UIsubject);
+					UIbody.style.display = "none";
+
 
 					// Append to Inbox Body
 					inboxBody.appendChild(emailContainer);
+
+					let w = document.body.querySelectorAll(".subject")[i];
+					let x = document.body.querySelectorAll(".date")[i];
+					let y = document.body.querySelectorAll(".sender")[i];
+					let z = document.body.querySelectorAll(".message")[i];
+						//console.log(z);
+						w.addEventListener('click', showMsg);
+						function showMsg(e) {
+							if(e.target.style.display === "block"){
+							x.style.display = "block";
+							y.style.display = "block";
+							z.style.display = "block";
+							}
+						}
+						w.addEventListener('dblclick', hideMsg)
+						function hideMsg(e){
+							if(e.target.style.display === "block"){
+							x.style.display = "none";
+							y.style.display = "none";
+							z.style.display = "none";
+						}
+						}
 				}
 			}
 			generateEmails(geemails);
 
-
-
-      };
+    };
 		</script>
 		<link rel="stylesheet" href="css/style.css">
 		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">

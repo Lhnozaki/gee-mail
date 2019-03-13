@@ -50,7 +50,7 @@ body {
 }
 
 .menu {
-  height: 500px;
+  height: 480px;
   float: left;
   width: 20%;
   background-color: #fff;
@@ -77,7 +77,7 @@ body {
 .emails {
   float: right;
   width: 80%;
-  height: 460px;
+  height: 440px;
   overflow: auto;
   background-color: #fff;
   padding-top: 0px;
@@ -103,13 +103,18 @@ body {
   padding: 17px 10px 10px 50px;
   border-bottom: 1px dotted #818181;
   background-image: url("/assets/plus.png");
-  background-position: 7px;
-  background-size: 5%; 
+  background-position: 10px;
+  background-size: 6%; 
   background-repeat: no-repeat;
 }
 
 .message, .sender, .date {
   /* border-top: 1px solid #9c9c9c; */
-  padding: 10px;
-  display: none;
+  padding: 17px 10px 10px 50px;
+  font-size: 13px;
+  /* display: none; */
+}
+
+.content {
+  /* display: block; */
 }
