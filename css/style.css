@@ -16,15 +16,16 @@
 }
 
 #logo {
-  text-shadow: 5px 5px 5px #701616;
+  text-shadow: 10px 10px 20px #701616;
 }
 
 #log-out {
   margin-top: -70px;
-  float:right;
+  margin-right: 10px;
+  float: right;
   font-size: 10px;
   border: 2px solid white;
-  padding: 10px;
+  padding: 10;
   border-radius: 50px;
   background-color: white;
   color: #d44638;
@@ -74,7 +75,7 @@ body {
   border-bottom-right-radius: 50px;
 }
 
-.emails {
+#emails {
   float: right;
   width: 80%;
   height: 440px;
@@ -115,6 +116,6 @@ body {
   /* display: none; */
 }
 
-.content {
-  /* display: block; */
+#first-email {
+  display: none;
 }
