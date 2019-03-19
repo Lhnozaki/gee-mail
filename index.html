@@ -10,7 +10,7 @@
 		let subject = ['Call Your Mother', 
 				'Cheap Online Meds', 
 				'Change Your Life Today', 
-				'Sppoky Stories', 
+				'Spooky Stories', 
 				'Meet Singles In Your Area', 
 				'Have You Heard?', 
 				'Yo', 
@@ -79,11 +79,12 @@
 			window.getNewMessage = getNewMessage;
 			loadGeeMails();	
 
-				// My Code
+				// My Code //
+
 				let inboxBody = document.querySelector("#emails");
 
 				function generateEmails(n) {
-				for(i=0; i<n.length; i++) {
+				for(i=0; i<n; i++) {
 					// Set UI Elements
 					let emailContainer = document.createElement('div');
 					let UIdate = document.createElement("div");
@@ -94,7 +95,7 @@
 
 					// Set ID & Append Child
 					UIsubject.className = "subject";
-					UIsubject.id = `subject-${i}`;
+					// UIsubject.id = `subject-${i}`;
 					UIsubject.textContent = geemails[i].subject;
 					emailContainer.appendChild(UIsubject);
 					UIsubject.style.display = "block";
@@ -119,34 +120,35 @@
 
 					//Add event listner
 					let w = document.getElementsByClassName("subject");
-					let x = document.querySelectorAll(".date")[i];
-					let y = document.querySelectorAll(".sender")[i];
-					let z = document.querySelectorAll(".message")[i];
-					w[i].addEventListener('click', showMsg);
+					// let x = document.querySelectorAll(".date")[i];
+					// let y = document.querySelectorAll(".sender")[i];
+					// let z = document.querySelectorAll(".message")[i];
+						w[i].addEventListener('click', showMsg);
 						function showMsg(e) {
-							if(e.target.style.display === "block"){
-							x.style.display = "block";
-							y.style.display = "block";
-							z.style.display = "block";
+							if(e.target.style.display === "none"){
+							UIdate.style.display = "block";
+							UIsender.style.display = "block";
+							UIbody.style.display = "block";
 							}
 						}
 						w[i].addEventListener('dblclick', hideMsg)
 						function hideMsg(e){
 							if(e.target.style.display === "block"){
-							x.style.display = "none";
-							y.style.display = "none";
-							z.style.display = "none";
+							UIdate.style.display = "none";
+							UIsender.style.display = "none";
+							UIbody.style.display = "none";
 							}
 					}	
 				}
 			}		
-			generateEmails(geemails);
+			generateEmails(geemails.length);
 			
 			let num = 1;
 			let inboxCount = document.querySelector("#count");
 			
 			setInterval(function(){
 				inboxCount.textContent = num++;
+
 				let emailContainer = document.createElement('div');
 				let UIdate = document.createElement("div");
 				let UIsubject = document.createElement("div");
@@ -160,6 +162,7 @@
 					UIsubject.addEventListener("click", showMsg);
 					UIsubject.addEventListener('dblclick', hideMsg);
 					UIsubject.style.display = "block";
+					UIsubject.style.fontWeight = "bolder";
 					
 					UIdate.className = "date";
 					UIdate.textContent = `Date: ${geemails[Math.floor(Math.random() * geemails.length)].date}`;
@@ -178,13 +181,16 @@
 
 					let first = document.getElementById("emails");
 					let second = document.getElementById("first-email");
-					first.insertBefore(emailContainer, second);
+					//first.insertBefore(emailContainer, second);
+					first.prepend(emailContainer)
+					
 
 						function showMsg(e) {
 							if(e.target.style.display === "block"){
 							UIdate.style.display = "block";
 							UIsender.style.display = "block";
 							UIbody.style.display = "block";
+							UIsubject.style.fontWeight = "normal";
 							}
 						}
 						function hideMsg(e) {
@@ -194,7 +200,23 @@
 							UIbody.style.display = "none";
 							}
 					}	
-			}, 3000);
+			}, 5000);
+
+		// Search Bar
+		let nav = document.querySelector("#search");
+		nav.addEventListener('keyup', filterEmails);
+		function filterEmails(e){
+			const text = e.target.value.toLowerCase();
+
+			document.querySelectorAll(".subject").forEach(function(email){
+				const sub = email.firstChild.textContent;
+				if (sub.toLowerCase().indexOf(text) !== -1){
+					email.style.display = "block";
+				} else {
+					email.style.display = "none";
+				}
+			})			
+		}
 
 		};
 		
