@@ -6,7 +6,7 @@
   var subject = ['Call Your Mother', 
   'Cheap Online Meds', 
   'Change Your Life Today', 
-  'Sppoky Stories', 
+  'Spooky Stories', 
   'Meet Singles In Your Area', 
   'Have You Heard?', 
   'Yo', 

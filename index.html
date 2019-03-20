@@ -5,202 +5,100 @@
     <script>
       window.onload = function(){
     // ALL OF YOUR JAVASCRIPT CODE SHOULD GO HERE. 
-		// We have to use window.onload so your JavaScript doesn't execute until the page has loaded and all HTML has been downloaded to your browser
+	  // We have to use window.onload so your JavaScript doesn't execute until the page has loaded and all HTML has been downloaded to your browser
 				
-		let subject = ['Call Your Mother', 
-				'Cheap Online Meds', 
-				'Change Your Life Today', 
-				'Spooky Stories', 
-				'Meet Singles In Your Area', 
-				'Have You Heard?', 
-				'Yo', 
-				'RE: Looking for a three legged cat', 
-				'Get Rich Quick!', 
-				'FW: Token Chain Email'];
+	  // My Code //
 
-		let sender = ['Mary Monster', 
-				'Dave Danger', 
-				'Spam Master', 
-				'Spike Spurner', 
-				'Ray Ranger', 
-				'Catherine Chaos', 
-				'Van Pire', 
-				'Andy Argye', 
-				'Rick Roger', 
-				'Sue Mee'];
+	  let inboxBody = document.querySelector("#emails");
 
-		let body = ['I am never gonna see a merman, ever. You haven\'t seen my drawer of inappropriate starches?',
-  			'I\'ll kill a man in a fair fight. Or if I think he\'s gonna start a fair fight. Or if he bothers me. Or if there\'s a woman. Or if I\'m getting paid. Mostly when I\'m getting paid. I thought all children despise effort and enjoy cartoons. Don\'t be ridiculous. Martha Stewart isn\'t a demon. She\'s a witch. Someone else\'s loss is my chocolatey goodness. I don\'t want to use the word genius, but I\'d be ok if you wanted to. What did I say to you about barging into my shuttle? Now you can luxuriate in a nice jail cell, but if your hand touches metal, I swear by my pretty floral bonnet: I will end you. Oh Spike, devour me! You\'re gonna die screaming but you won\'t be heard. Eyeballs to entrails, my sweet.',
-  			'We need to save Buffy from Hansel and Gretel. Well, you were busy trying to get yourself lit on fire. The only thing Willow was ever good for, the only thing I ever had going for me were those moments, just moments, where Tara would look at me and I was wonderful. Everyone\'s a hero in their own way, in their own not that heroic way. Planet\'s coming up a mite fast.',
-  			'Better to cut you down to size, grandma. I\'m the one who brings about the thought-pocalypse. Yeah, it was sexy the way she touched me real hard with her fists. I dislike that Anya. She\'s newly human and strangely literal.',
-  			'Yeah, well, I\'m not the one who wanted Wind Beneath My Wings for the first dance. She\'s a truck-driving magic mama! And I\'m a huge fan of the way you lose control and turn into an enormous green rage monster. We\'re outlaws with hearts of gold. Or even worse, a sneezure.',
-  			'Oh my god! Did it sing? Turns out I suddenly find myself needing to know the plural of apocalypse. It\'s about women. It was like the Heimlich, with stripes! First of all, Feng Shui up the yin yang, also I designed parts of it but I did not design the stone cold foxes in the small clothes and the ample massage facilities. That girl will rain destruction down on you and your ship. Sweetie, if he had a tussle with that Sasquatch, we\'d be in the dirt right about now, scooping up the Captain\'s teeth. You can\'t spend the rest of your life waiting for Xander to wake up and smell the hottie. Either blow us all up or rub soup in our hair. It\'s a toss-up. I think calling him that is an insult to the psychotic lowlife community.',
-  			'Xander, that\'s not the North Star, it\'s an airplane. You can\'t open the book of my life and jump in the middle. What do they need such good eyesight for anyway? Well we could grind our enemies into talcum powder with a sledgehammer but, gosh, we did that last night. The gentlemen are coming by. You can\'t take the sky from me. Okay, at this point you\'re abusing sarcasm. Well, I haven\'t been to a hell dimension just of late, but I do know a thing or two about torment.',
-  			'And now the one person who should be here is gone, and a waste like you gets to live. The human mind is like Van Halen; if you just pull out one piece and keep replacing it, it just degenerates. Turns out I suddenly find myself needing to know the plural of apocalypse. It\'s a real burn, being right so often. Who\'s calling me? Everybody I know lives here.',
-  			'Looking in windows, knocking on doors. Well, look at me. I\'m all fuzzy. And what\'s with all the carrots? That girl will rain destruction down on you and your ship. If I could make you purtier, I would. I wanna hurt you, but I can\'t resist the sinister attraction of your cold and muscular body! Seems odd you\'d name your ship after a battle you were on the wrong side of.',
-  			'I\'m a comfortador also. You\'re a hell of a woman. Passion rules us all. You\'re gonna die screaming but you won\'t be heard. How did your brain even learn human speech? I\'m just so curious. Occasionally, I\'m callous and strange.'];
-
-		function loadGeeMails(){
-    		for (let i = 0; i < subject.length; i++){
-      			let message = generateMessage();
-      			window.geemails.push(message);
-    			}
-  			}
-
-  			function generateMessage(date){
-    			let message = {};
-    			message.date = date || getRandomDate();
-    			message.subject = getRandomElement(subject);
-    			message.sender = getRandomElement(sender);
-    			message.body = getRandomElement(body);
-    			return message;
-  			}			
-
-  			function getRandomElement(arr){
-    			return arr[Math.floor(Math.random() * arr.length)];
-  			}
-
-  			function getNewMessage(){
-    			let now = new Date();
-    			return generateMessage(now);
-  			}
-
-			function getRandomDate(){
-				let year = 2013;
-				let month = Math.floor(Math.random() * 12) + 1;
-				let day = Math.floor(Math.random() * 30) + 1;
-				let hours = Math.floor(Math.random() * 12) + 1;
-				let minutes = Math.floor(Math.random() * 59) + 1;
-				return new Date(year, month, day, hours, minutes);
-			}
-
-			//load intial GeeMail data to window object
-			window.geemails = [];
-			window.getNewMessage = getNewMessage;
-			loadGeeMails();	
-
-				// My Code //
-
-				let inboxBody = document.querySelector("#emails");
-
-				function generateEmails(n) {
-				for(i=0; i<n; i++) {
-					// Set UI Elements
-					let emailContainer = document.createElement('div');
-					let UIdate = document.createElement("div");
-					let UIsubject = document.createElement("div");
-					let UIsender = document.createElement("div");
-					let UIbody = document.createElement("div");
-					emailContainer.className = "content";
-
-					// Set ID & Append Child
-					UIsubject.className = "subject";
-					// UIsubject.id = `subject-${i}`;
-					UIsubject.textContent = geemails[i].subject;
-					emailContainer.appendChild(UIsubject);
-					UIsubject.style.display = "block";
+	  function generateEmails(n) {
+		  for(i=0; i<n; i++) {
+			  // Set UI Elements
+			  let emailContainer = document.createElement('div');
+			  let UIdate = document.createElement("div");
+			  let UIsubject = document.createElement("div");
+			  let UIsender = document.createElement("div");
+			  let UIbody = document.createElement("div");
+			  emailContainer.className = "content";
+        
+			  UIsubject.className = "subject";	
+			  UIsubject.textContent = geemails[Math.floor(Math.random() * geemails.length)].subject;
+			  emailContainer.appendChild(UIsubject);
+			  UIsubject.style.display = "block";
 					
-					UIdate.className = "date";
-					UIdate.textContent = `Date: ${geemails[Math.floor(Math.random() * geemails.length)].date}`;
-					UIsubject.appendChild(UIdate);
-					UIdate.style.display = "none";
+			  UIdate.className = "date";
+			  UIdate.textContent = `Date: ${geemails[Math.floor(Math.random() * geemails.length)].date}`;
+			  UIsubject.appendChild(UIdate);
+			  UIdate.style.display = "none";
 
-					UIsender.className = "sender";
-					UIsender.textContent = `From: ${geemails[Math.floor(Math.random() * geemails.length)].sender}`;
-					UIsubject.appendChild(UIsender);
-					UIsender.style.display = "none";
+			  UIsender.className = "sender";
+			  UIsender.textContent = `From: ${geemails[Math.floor(Math.random() * geemails.length)].sender}`;
+			  UIsubject.appendChild(UIsender);
+			  UIsender.style.display = "none";
 
-					UIbody.className = "message";
-					UIbody.textContent = geemails[Math.floor(Math.random() * geemails.length)].body;
-					UIsubject.appendChild(UIbody);
-					UIbody.style.display = "none";
+			  UIbody.className = "message";
+			  UIbody.textContent = geemails[Math.floor(Math.random() * geemails.length)].body;
+			  UIsubject.appendChild(UIbody);
+			  UIbody.style.display = "none";
 
-					// Append to Inbox Body
-					inboxBody.appendChild(emailContainer);
+			  // Append to Inbox Body
+			  //inboxBody.appendChild(emailContainer);
+        let first = document.getElementById("emails");
+				let second = document.getElementById("first-email");
+				//first.insertBefore(emailContainer, second);
+				first.prepend(emailContainer)
+		}
+	}		
+	
+  generateEmails(geemails.length);
 
-					//Add event listner
-					let w = document.getElementsByClassName("subject");
-					// let x = document.querySelectorAll(".date")[i];
-					// let y = document.querySelectorAll(".sender")[i];
-					// let z = document.querySelectorAll(".message")[i];
-						w[i].addEventListener('click', showMsg);
-						function showMsg(e) {
-							if(e.target.style.display === "none"){
-							UIdate.style.display = "block";
-							UIsender.style.display = "block";
-							UIbody.style.display = "block";
-							}
-						}
-						w[i].addEventListener('dblclick', hideMsg)
-						function hideMsg(e){
-							if(e.target.style.display === "block"){
-							UIdate.style.display = "none";
-							UIsender.style.display = "none";
-							UIbody.style.display = "none";
-							}
-					}	
-				}
-			}		
-			generateEmails(geemails.length);
+  let num = 11;
+	let inboxCount = document.querySelector("#count");
+  let classDiv = document.getElementsByClassName("subject");
+  for (i = 0; i<classDiv.length; i++){
+    classDiv[i].addEventListener("click", showMsg);
+  }
+
+  function showMsg() {
+    let showDate = this.querySelectorAll(".date")[0];
+    let showSender = this.querySelectorAll(".sender")[0];
+    let showMessage = this.querySelectorAll(".message")[0];
+    if (showDate.style.display === "none"){
+      showDate.style.display = "block";
+      showSender.style.display = "block";
+      showMessage.style.display = "block";
+    } else {
+      showDate.style.display = "none";
+      showSender.style.display = "none";
+      showMessage.style.display = "none";
+    }
+  }
 			
-			let num = 1;
-			let inboxCount = document.querySelector("#count");
-			
-			setInterval(function(){
-				inboxCount.textContent = num++;
+	setInterval(function(){
+	inboxCount.textContent = num++;
+    
+  generateEmails(1);
 
-				let emailContainer = document.createElement('div');
-				let UIdate = document.createElement("div");
-				let UIsubject = document.createElement("div");
-				let UIsender = document.createElement("div");
-				let UIbody = document.createElement("div");
-				emailContainer.className = "content";
-
-					UIsubject.className = "subject";
-					UIsubject.textContent = `New: ${geemails[Math.floor(Math.random() * geemails.length)].subject}`;
-					emailContainer.appendChild(UIsubject);
-					UIsubject.addEventListener("click", showMsg);
-					UIsubject.addEventListener('dblclick', hideMsg);
-					UIsubject.style.display = "block";
-					UIsubject.style.fontWeight = "bolder";
-					
-					UIdate.className = "date";
-					UIdate.textContent = `Date: ${geemails[Math.floor(Math.random() * geemails.length)].date}`;
-					UIsubject.appendChild(UIdate);
-					UIdate.style.display = "none";
-
-					UIsender.className = "sender";
-					UIsender.textContent = `From: ${geemails[Math.floor(Math.random() * geemails.length)].sender}`;
-					UIsubject.appendChild(UIsender);
-					UIsender.style.display = "none";
-
-					UIbody.className = "message";
-					UIbody.textContent = geemails[Math.floor(Math.random() * geemails.length)].body;
-					UIsubject.appendChild(UIbody);
-					UIbody.style.display = "none";
-
-					let first = document.getElementById("emails");
-					let second = document.getElementById("first-email");
-					//first.insertBefore(emailContainer, second);
-					first.prepend(emailContainer)
-					
-
-						function showMsg(e) {
-							if(e.target.style.display === "block"){
-							UIdate.style.display = "block";
-							UIsender.style.display = "block";
-							UIbody.style.display = "block";
-							UIsubject.style.fontWeight = "normal";
-							}
-						}
-						function hideMsg(e) {
-							if(e.target.style.display === "block"){
-							UIdate.style.display = "none";
-							UIsender.style.display = "none";
-							UIbody.style.display = "none";
-							}
-					}	
-			}, 5000);
+  let classDiv = document.getElementsByClassName("subject");
+  for (i = 0; i<classDiv.length; i++){
+    classDiv[0].style.fontWeight = "bold";
+    classDiv[i].addEventListener("click", function (){
+    let showDate = this.querySelectorAll(".date")[0];
+    let showSender = this.querySelectorAll(".sender")[0];
+    let showMessage = this.querySelectorAll(".message")[0];
+    if (showDate.style.display === "none"){
+      showDate.style.display = "block";
+      showSender.style.display = "block";
+      showMessage.style.display = "block";
+      classDiv[0].style.fontWeight = "normal";
+    } else {
+      showDate.style.display = "none";
+      showSender.style.display = "none";
+      showMessage.style.display = "none";
+    }
+    })
+  }
+	}, 3000);
 
 		// Search Bar
 		let nav = document.querySelector("#search");
@@ -217,8 +115,7 @@
 				}
 			})			
 		}
-
-		};
+	};
 		
 		</script>
 		<link rel="stylesheet" href="css/style.css">
@@ -243,7 +140,7 @@
 		<!--Side Navigation-->
 		<div class="menu">
 			<a href="#" id="compose"><span id="plus">+</span> Compose</a>
-			<a href="." id="inbox">Inbox (<span id="count">0</span>)</a>
+			<a href="." id="inbox">Inbox (<span id="count">10</span>)</a>
 			<a href="#">Sent</a>
 			<a href="https://www.spam.com/">Spam</a>
 			<a href="#">Deleted</a>
