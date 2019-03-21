@@ -79,26 +79,26 @@
     
   generateEmails(1);
 
-  let classDiv = document.getElementsByClassName("subject");
-  for (i = 0; i<classDiv.length; i++){
-    classDiv[0].style.fontWeight = "bold";
-    classDiv[i].addEventListener("click", function (){
-    let showDate = this.querySelectorAll(".date")[0];
-    let showSender = this.querySelectorAll(".sender")[0];
-    let showMessage = this.querySelectorAll(".message")[0];
-    if (showDate.style.display === "none"){
-      showDate.style.display = "block";
-      showSender.style.display = "block";
-      showMessage.style.display = "block";
-      classDiv[0].style.fontWeight = "normal";
+  let classDiv2 = document.getElementsByClassName("subject");
+  for (i = 1; i<=1; i++){
+    classDiv2[0].style.fontWeight = "bold";
+    classDiv2[0].addEventListener("click", function (){
+    let showDate2 = this.querySelectorAll(".date")[0];
+    let showSender2 = this.querySelectorAll(".sender")[0];
+    let showMessage2 = this.querySelectorAll(".message")[0];
+    if (showDate2.style.display === "none"){
+      showDate2.style.display = "block";
+    	showSender2.style.display = "block";
+      showMessage2.style.display = "block";
+			this.style.fontWeight = "normal";
     } else {
-      showDate.style.display = "none";
-      showSender.style.display = "none";
-      showMessage.style.display = "none";
+      showDate2.style.display = "none";
+      showSender2.style.display = "none";
+      showMessage2.style.display = "none";
     }
     })
   }
-	}, 3000);
+	}, 7000);
 
 		// Search Bar
 		let nav = document.querySelector("#search");
