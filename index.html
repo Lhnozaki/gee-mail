@@ -11,7 +11,7 @@
 
 	  let inboxBody = document.querySelector("#emails");
 
-	  function generateEmails(n) {
+	  function generateEmails(n, m) {
 		  for(i=0; i<n; i++) {
 			  // Set UI Elements
 			  let emailContainer = document.createElement('div');
@@ -22,27 +22,26 @@
 			  emailContainer.className = "content";
         
 			  UIsubject.className = "subject";	
-			  UIsubject.textContent = geemails[Math.floor(Math.random() * geemails.length)].subject;
+			  UIsubject.textContent = m[i].subject;
 			  emailContainer.appendChild(UIsubject);
 			  UIsubject.style.display = "block";
-					
+				
 			  UIdate.className = "date";
-			  UIdate.textContent = `Date: ${geemails[Math.floor(Math.random() * geemails.length)].date}`;
+			  UIdate.textContent = `Date: ${m[i].date}`;
 			  UIsubject.appendChild(UIdate);
 			  UIdate.style.display = "none";
 
 			  UIsender.className = "sender";
-			  UIsender.textContent = `From: ${geemails[Math.floor(Math.random() * geemails.length)].sender}`;
+			  UIsender.textContent = `From: ${m[i].sender}`;
 			  UIsubject.appendChild(UIsender);
 			  UIsender.style.display = "none";
 
 			  UIbody.className = "message";
-			  UIbody.textContent = geemails[Math.floor(Math.random() * geemails.length)].body;
+			  UIbody.textContent = m[i].body;
 			  UIsubject.appendChild(UIbody);
 			  UIbody.style.display = "none";
 
 			  // Append to Inbox Body
-			  //inboxBody.appendChild(emailContainer);
         let first = document.getElementById("emails");
 				let second = document.getElementById("first-email");
 				//first.insertBefore(emailContainer, second);
@@ -50,7 +49,7 @@
 		}
 	}		
 	
-  generateEmails(geemails.length);
+  generateEmails(geemails.length, geemails);
 
   let num = 11;
 	let inboxCount = document.querySelector("#count");
@@ -73,11 +72,14 @@
       showMessage.style.display = "none";
     }
   }
-			
+
 	setInterval(function(){
 	inboxCount.textContent = num++;
-    
-  generateEmails(1);
+
+	let array = [];
+	let newMsg = getNewMessage();
+	array.push(newMsg);
+	generateEmails(1, array);
 
   let classDiv2 = document.getElementsByClassName("subject");
   for (i = 1; i<=1; i++){

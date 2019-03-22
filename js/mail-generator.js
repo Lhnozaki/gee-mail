@@ -13,6 +13,7 @@
   'RE: Looking for a three legged cat', 
   'Get Rich Quick!', 
   'FW: Token Chain Email'];
+
   var sender = ['Mary Monster', 
   'Dave Danger', 
   'Spam Master', 
@@ -23,6 +24,7 @@
   'Andy Argye', 
   'Rick Roger', 
   'Sue Mee'];
+  
   var body = ['I am never gonna see a merman, ever. You haven\'t seen my drawer of inappropriate starches?',
   'I\'ll kill a man in a fair fight. Or if I think he\'s gonna start a fair fight. Or if he bothers me. Or if there\'s a woman. Or if I\'m getting paid. Mostly when I\'m getting paid. I thought all children despise effort and enjoy cartoons. Don\'t be ridiculous. Martha Stewart isn\'t a demon. She\'s a witch. Someone else\'s loss is my chocolatey goodness. I don\'t want to use the word genius, but I\'d be ok if you wanted to. What did I say to you about barging into my shuttle? Now you can luxuriate in a nice jail cell, but if your hand touches metal, I swear by my pretty floral bonnet: I will end you. Oh Spike, devour me! You\'re gonna die screaming but you won\'t be heard. Eyeballs to entrails, my sweet.',
   'We need to save Buffy from Hansel and Gretel. Well, you were busy trying to get yourself lit on fire. The only thing Willow was ever good for, the only thing I ever had going for me were those moments, just moments, where Tara would look at me and I was wonderful. Everyone\'s a hero in their own way, in their own not that heroic way. Planet\'s coming up a mite fast.',
@@ -74,5 +76,6 @@
   window.getNewMessage = getNewMessage;
   loadGeeMails();	
 })();
+
 
 
