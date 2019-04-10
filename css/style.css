@@ -24,12 +24,18 @@
   margin-right: 10px;
   float: right;
   font-size: 10px;
-  border: 2px solid lightgrey;
+  border: 2px solid white;
   padding: 10;
   border-radius: 50px;
   background-color: white;
   color: #9c342b;
-  //box-shadow: 2px 2px #c6c6c6;
+  /* box-shadow: 2px 2px #c6c6c6; */
+}
+
+#log-out:hover {
+  transition: 0.3s;
+  background-color: #e49e9e;
+  color: white;
 }
 
 #search {
@@ -74,6 +80,7 @@ body {
   color: #ffffff;
   border-top-right-radius: 50px;
   border-bottom-right-radius: 50px;
+  transition: 0.3s;
 }
 
 #emails {
@@ -111,8 +118,11 @@ body {
 }
 
 .subject:hover{
-  background: #929292;
-  color: white;
+  /* background: #929292;
+  color: white; */
+  /* padding: 15px 15px 15px 50px; */
+  font-size: 15px;
+  transition: 0.3s;
 }
 
 .message, .sender, .date {
